@@ -40,6 +40,10 @@ namespace SpaceBasicData
         [JsonPropertyName("caption")]
         public string Caption { get; set; }
 
+        [JsonPropertyName("image")]
+        public string Image { get; set; }
+
+
         [JsonPropertyName("version")]
         public string Version { get; set; }
 

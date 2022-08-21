@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text.Json;
 using System.IO;
+using System.Net;
 
 Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -19,7 +20,8 @@ Console.WriteLine("Nasa Data Api Analize Start");
 
 var startYear = DateTime.Now.Year - 6;
 var endYear = DateTime.Now.Year - 1;
-string demoKey = "Your Nasa Demo Key Input";
+var downloadType = "jpg";
+string demoKey = "5B6oJsSCQyekXZvNOKpsUhRPl1e7FHqjIAyHpybk";
 SpaceBasicData.NasaEpicHistoryRoot rootData = new SpaceBasicData.NasaEpicHistoryRoot();
 rootData.dataHistories = new List<SpaceBasicData.NasaEpicDataResponse>();
 for (; startYear < endYear; startYear++) {
@@ -44,6 +46,12 @@ for (; startYear < endYear; startYear++) {
         foreach (var nasaDataRoot in nasaEpicDataRoot)
         {
             spaceData.epicDateRecords.Add(nasaDataRoot);
+            var imageName = nasaDataRoot.Image;
+            string url = $"https://epic.gsfc.nasa.gov/archive/enhanced/{startYear}/{i}/15/{downloadType}/{imageName}.{downloadType}";
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFile(new Uri(url), $"{imageName}.{downloadType}");
+            }
         }
         rootData.dataHistories.Add(spaceData);
     }
