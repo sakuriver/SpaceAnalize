@@ -3,10 +3,64 @@
 namespace SpaceBasicData
 {
 
+    public class NasaMarsRoot
+    {
+        [JsonPropertyName("photos")]
+        public List<NasaMarsPhotoRecord>? photos { get; set; }
+    }
+
+    public class NasaMarsPhotoRecord
+    {
+        [JsonPropertyName("id")]
+        public int? Id { get; set; }
+        [JsonPropertyName("sol")]
+        public int? Sol { get; set; }
+        [JsonPropertyName("img_src")]
+        public string? ImgSrc { get; set; }
+        [JsonPropertyName("earth_date")]
+        public string? EarthDate { get; set; }
+        //[JsonPropertyName("camera")]
+        //public NasaMarsCameraData Camera;
+        //[JsonPropertyName("rover")]
+        //public NasaMarsRoverData Rover;
+
+    }
+
+
+
+
+
+    public class NasaMarsCameraData
+    {
+        [JsonPropertyName("id")]
+        public int id;
+        [JsonPropertyName("name")]
+        public string name;
+        [JsonPropertyName("rover_id")]
+        public int rover_id;
+        [JsonPropertyName("full_name")]
+        public string full_name;
+
+    }
+    public class NasaMarsRoverData
+    {
+        [JsonPropertyName("id")]
+        public int Id;
+        [JsonPropertyName("name")]
+        public string Name;
+        [JsonPropertyName("landing_date")]
+        public string LandingDate;
+        [JsonPropertyName("launch_date")]
+        public string LaunchDate;
+        [JsonPropertyName("status")]
+        public string Status;
+
+    }
+
     public class NasaEpicHistoryRoot
     {
         [JsonPropertyName("histories")]
-        public List<NasaEpicDataResponse> dataHistories { get; set; }
+        public List<NasaEpicDataResponse> DataHistories { get; set; }
     }
 
 
@@ -19,10 +73,10 @@ namespace SpaceBasicData
         /// 
         /// </summary>
         [JsonPropertyName("stat_date")]
-        public string statDate { get; set; }
+        public string StatDate { get; set; }
 
         [JsonPropertyName("records")]
-        public List<NasaEpicDateRecord> epicDateRecords { get; set; }
+        public List<NasaEpicDateRecord> EpicDateRecords { get; set; }
 
 
 

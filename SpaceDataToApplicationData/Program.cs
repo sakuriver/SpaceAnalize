@@ -1,15 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Text.Json;
-using System.IO;
 using System.Net;
 
 Console.ForegroundColor = ConsoleColor.Gray;
 
 HttpClient client = new HttpClient();
 HttpResponseMessage response;
-
-
-
 
 Console.WriteLine("Nasa Data Api Analize Start");
 
@@ -23,7 +19,7 @@ var endYear = DateTime.Now.Year - 1;
 var downloadType = "jpg";
 string demoKey = "5B6oJsSCQyekXZvNOKpsUhRPl1e7FHqjIAyHpybk";
 SpaceBasicData.NasaEpicHistoryRoot rootData = new SpaceBasicData.NasaEpicHistoryRoot();
-rootData.dataHistories = new List<SpaceBasicData.NasaEpicDataResponse>();
+rootData.DataHistories = new List<SpaceBasicData.NasaEpicDataResponse>();
 for (; startYear < endYear; startYear++) {
     for (var i = 1; i <= 12; i++) {
         var requestDate = $"{startYear}-{i}-15";
@@ -41,11 +37,11 @@ for (; startYear < endYear; startYear++) {
         List<SpaceBasicData.NasaEpicDateRecord> nasaEpicDataRoot = JsonSerializer.Deserialize<List<SpaceBasicData.NasaEpicDateRecord>>(nasaApiResponseBody);
 
         var spaceData = new SpaceBasicData.NasaEpicDataResponse();
-        spaceData.statDate = requestDate;
-        spaceData.epicDateRecords = new List<SpaceBasicData.NasaEpicDateRecord>();
+        spaceData.StatDate = requestDate;
+        spaceData.EpicDateRecords = new List<SpaceBasicData.NasaEpicDateRecord>();
         foreach (var nasaDataRoot in nasaEpicDataRoot)
         {
-            spaceData.epicDateRecords.Add(nasaDataRoot);
+            spaceData.EpicDateRecords.Add(nasaDataRoot);
             var imageName = nasaDataRoot.Image;
             string url = $"https://epic.gsfc.nasa.gov/archive/enhanced/{startYear}/{i}/15/{downloadType}/{imageName}.{downloadType}";
             using (WebClient webClient = new WebClient())
@@ -53,14 +49,17 @@ for (; startYear < endYear; startYear++) {
                 webClient.DownloadFile(new Uri(url), $"{imageName}.{downloadType}");
             }
         }
-        rootData.dataHistories.Add(spaceData);
+        rootData.DataHistories.Add(spaceData);
     }
-
 }
+
+
+
 try
 {
     var rootDataStr = JsonSerializer.Serialize(rootData);
     File.WriteAllText("./nasadata.json", rootDataStr);
+
 }
 catch (Exception ex)
 {

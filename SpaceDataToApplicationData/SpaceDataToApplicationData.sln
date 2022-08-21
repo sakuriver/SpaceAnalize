@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceDataToApplicationData", "SpaceDataToApplicationData.csproj", "{22788D3F-97C6-4983-8CD2-BD18599FB07A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceDataToApplicationData", "SpaceDataToApplicationData.csproj", "{22788D3F-97C6-4983-8CD2-BD18599FB07A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBasicData", "..\SpaceBasicData\SpaceBasicData.csproj", "{2CCF377A-31F6-41B7-B3E6-928C359F0674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceBasicData", "..\SpaceBasicData\SpaceBasicData.csproj", "{2CCF377A-31F6-41B7-B3E6-928C359F0674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsPhotoDownloader", "..\MarsPhotoDownloader\MarsPhotoDownloader.csproj", "{7A32DF67-6BD8-4DA9-B4AF-C6BF061CE248}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A32DF67-6BD8-4DA9-B4AF-C6BF061CE248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A32DF67-6BD8-4DA9-B4AF-C6BF061CE248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A32DF67-6BD8-4DA9-B4AF-C6BF061CE248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A32DF67-6BD8-4DA9-B4AF-C6BF061CE248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
