@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceDataToApplicationData", "SpaceDataToApplicationData.csproj", "{22788D3F-97C6-4983-8CD2-BD18599FB07A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBasicData", "..\SpaceBasicData\SpaceBasicData.csproj", "{2CCF377A-31F6-41B7-B3E6-928C359F0674}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22788D3F-97C6-4983-8CD2-BD18599FB07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22788D3F-97C6-4983-8CD2-BD18599FB07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22788D3F-97C6-4983-8CD2-BD18599FB07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22788D3F-97C6-4983-8CD2-BD18599FB07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCF377A-31F6-41B7-B3E6-928C359F0674}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DBD18CF-C5F1-4570-A0A2-C789B22A5B6C}
+	EndGlobalSection
+EndGlobal
